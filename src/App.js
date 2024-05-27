@@ -5,22 +5,26 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import './App.css';
 
 const App = () => {
-  const activeMenu = true;
+  const activeMenu = true; //declared variable
   return (
     <div>
+      {/* Sidebar */}
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+            {/* Theme Settings Button */}
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
                 style={{ background: 'blue', borderRadius: '50%' }}
               >
+                {/* Icon */}
                 <FiSettings />
               </button>
             </TooltipComponent>
           </div>
+          {/* bahaviour of sidebar */}
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
               Sidebar
@@ -39,11 +43,34 @@ const App = () => {
           </div>
 
           <div>
+            {/* Dashboard */}
             <Routes>
-              <Route path="/" element="ECommerce" /> 
+              <Route path="/" element="ECommerce" />
+              <Route path="/ecommerce" element="ECommerce" />
+
+              {/* Pages */}
+              <Route path="/orders" element="Orders" />
+              <Route path="/employees" element="Employees" />
+              <Route path="/customers" element="Customers" />
+
+              {/* Apps */}
+              <Route path="/kanban" element="Kanban" />
+              <Route path="/editor" element="Editor" />
+              <Route path="/calendar" element="Calendar" />
+              <Route path="/color-picker" element="ColorPicker" />
+
+              {/* Charts */}
+              <Route path="/line" element="Line" />
+              <Route path="/area" element="Area" />
+              <Route path="/bar" element="Bar" />
+              <Route path="/pie" element="Pie" />
+              <Route path="/financial" element="Financial" />
+              <Route path="/color-mapping" element="ColorMapping" />
+              <Route path="/pyramid" element="Pyramid" />
+              <Route path="/stacked" element="Stacked" />
+
             </Routes>
           </div>
-
         </div>
       </BrowserRouter>
     </div>
