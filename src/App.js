@@ -23,15 +23,20 @@ import {
   Line,
 } from './pages';
 
+import { useStateContext } from './contexts/ContextProvider';
+
 import './App.css';
 
+
+
 const App = () => {
-  const activeMenu = true; //declared variable
+  
+  const { activeMenu } = useStateContext();
   return (
     <div>
       {/* Sidebar */}
       <BrowserRouter>
-        <div className="flex relative dark:bg-main-dark-bg">
+        <div className="flex relative dark:b`g-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             {/* Theme Settings Button */}
             <TooltipComponent content="Settings" position="Top">
